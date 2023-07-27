@@ -1,7 +1,7 @@
 # EnumDrive
 User enumeration - script to enumerate valid o365 users
 
-# Use
+### Instructions
 ```
 PS C:\Users\IEUser> ipmo .\Invoke-EnumDrive.ps1
 
