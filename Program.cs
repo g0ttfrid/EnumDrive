@@ -26,7 +26,7 @@ namespace EnumDrive
 
             var parallelGroups = Enumerable.Range(0, c)
                                            .GroupBy(r => (r % 100));
-            
+
             var users = new List<string>();
 
             var parallelTasks = parallelGroups.Select(groups =>
@@ -88,10 +88,13 @@ namespace EnumDrive
 
         static bool ResolveHost(string domain)
         {
-            try {
+            try
+            {
                 IPAddress[] add = Dns.GetHostAddresses(domain);
                 return true;
-            } catch {
+            }
+            catch
+            {
                 return false;
             }
         }
@@ -102,11 +105,11 @@ namespace EnumDrive
             {
                 if (args.Length == 2 && args[0] is "recon")
                 {
-                    if (!ResolveHost(args[1]))
+                    /*if (!ResolveHost(args[1]))
                     {
                         Console.WriteLine($"[!] Domain not found");
                         return;
-                    }
+                    }*/
 
                     List<string> tenants = GetTenant(args[1]);
 
